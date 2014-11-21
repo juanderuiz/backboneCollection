@@ -4,6 +4,9 @@ window.Mymusic =
   Views: {}
   Routers: {}
   initialize: -> 
+    new @Routers.MymusicRouter
+    Backbone.history.start(pushState: true)
+
 
 window.App = window.Mymusic
 

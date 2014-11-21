@@ -4,7 +4,6 @@ window.Mymusic =
   Views: {}
   Routers: {}
   initialize: -> 
-    alert ('Welcome to MyMusic Collection!')
 
 window.App = window.Mymusic
 

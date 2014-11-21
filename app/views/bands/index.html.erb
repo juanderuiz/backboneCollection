@@ -1,0 +1,10 @@
+<ul>
+<% bands.each do |band| %>
+  <li>
+    <dl>
+      <dt>Name</dt>
+      <dd><%= link_to band.name, band %></dd>
+    </dl>
+  </li>
+<% end %>
+</ul>

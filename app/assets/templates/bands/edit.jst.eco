@@ -1,0 +1,3 @@
+<input type="text" class="band-name" value="<%= @band.get('name') %>" />
+<br />
+<input type="submit" />

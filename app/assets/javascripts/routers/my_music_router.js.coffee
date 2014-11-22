@@ -4,7 +4,11 @@ class App.Routers.MymusicRouter extends Backbone.Router
     'bands/:id': 'showBand'
 
   index: ->
-    alert("Requested index page")
+    view = new App.Views.Bands(collection: App.AllBands)
+    $('#container').html(view.render().el)
 
   showBand: (id) ->
-    alert("Request Band #{id}")
+    model = App.AllBands[id - 1]
+    view = new App.Views.EditBand(model: model)
+    console.log("Request Band #{id}")
+    $('#container').html(view.render().el)

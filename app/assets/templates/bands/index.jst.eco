@@ -1,0 +1,10 @@
+<ul>
+  <% for band in @bands: %>
+    <li>
+      <dl>
+        <dt>Banda JST-ECO</dt>
+        <dd><a href="<%= band.url() %>"><%= band.get('name') %></a></dd>
+      </dl>
+    </li>
+  <% end %>
+</ul>

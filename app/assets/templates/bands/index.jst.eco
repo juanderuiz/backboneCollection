@@ -1,5 +1,5 @@
 <ul>
-  <% for band in @bands: %>
+  <% for band in @bands.models: %>
     <li>
       <dl>
         <dt>Banda JST-ECO</dt>

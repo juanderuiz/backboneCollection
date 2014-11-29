@@ -8,7 +8,7 @@ class App.Routers.MymusicRouter extends Backbone.Router
     $('#container').html(view.render().el)
 
   showBand: (id) ->
-    model = App.AllBands[id - 1]
+    model = App.AllBands.get(id)
     view = new App.Views.EditBand(model: model)
     console.log("Request Band #{id}")
     $('#container').html(view.render().el)

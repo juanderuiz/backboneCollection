@@ -11,6 +11,9 @@ class App.Views.EditBand extends Backbone.View
     this
 
   saveModel: (e) ->
-    @model.set('name', @$('.band-name').val())
+    @model.save('name', @$('.band-name').val())
+    #@model.save({'name', @$('.band-name').val()}, patch: true)
+
+    console.log("Band Edited and saved??")
     Backbone.history.navigate('/', trigger: true)
     false

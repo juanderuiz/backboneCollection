@@ -3,16 +3,18 @@ class App.Views.Bands extends Backbone.View
 
   template: JST['bands/index']
 
-  events:
-    'click a': 'showBand'
+  initialize: ->
+    @addActions = new App.Views.AddActions(collection: @collection)
+    @listenTo(@collection, 'reset', @render)
+    @listenTo(@collection, 'add', @renderBand)
 
-  render: ->
-    @$el.html(@template(bands: @collection))
+  render: =>
+    @$el.html(@template())
+    @collection.forEach(@renderBand)
+    @$el.append(@addActions.render().el)
     this
 
-  showBand: (e) ->
-    $this = $(e.currentTarget)
-    url = $this.attr("href")
-    Backbone.history.navigate(url, trigger: true)
-    #If trigger:true is not added, it doesn't ROUTE!!
-    false #event.preventDefault
+  renderBand: (band) =>
+    view = new App.Views.ShowBand(model: band, tagName: 'li')
+    @$('.bands').append(view.render().el)
+

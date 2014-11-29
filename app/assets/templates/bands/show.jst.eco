@@ -1,5 +1,5 @@
 <header class="name-container">
-  <input type="text" class="band-name" value="<%= @band.get("name") %>" />
+  <input type="text" class="band-name" value="<%= @band.get("name") %>" placeholder="Name..." />
 </header>
 <div class="footer">
   <button class="save">Save</button>

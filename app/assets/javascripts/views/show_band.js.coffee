@@ -3,6 +3,9 @@ class App.Views.ShowBand extends Backbone.View
 
   className: 'band'
 
+  initialize: ->
+    @listenTo(@model, "invalid", @addError)
+
   events:
     'change': 'save'
     'keydown .band-name': 'blurIfEnter'
@@ -26,6 +29,7 @@ class App.Views.ShowBand extends Backbone.View
 
   beginEditing: ->
     @$el.addClass('editing')
+    @$el.removeClass('error')
 
   endEditing: ->
     @$el.removeClass('editing')
@@ -35,3 +39,6 @@ class App.Views.ShowBand extends Backbone.View
     @model.destroy()
     @remove()
     false
+
+  addError: =>
+    @$el.addClass("error")

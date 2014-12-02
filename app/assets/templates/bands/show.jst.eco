@@ -4,3 +4,4 @@
 <div class="footer">
   <button class="save">Save</button>
 </div>
+<button class="destroy-band" tabindex="-1">Remove</button>

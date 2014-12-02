@@ -11,5 +11,5 @@ class App.Views.AddActions extends Backbone.View
     this
 
   addBand: ->
-    @collection.add({})
+    @collection.add({}) #Crea una instancia con los valores por defecto
     false

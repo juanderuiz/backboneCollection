@@ -53,6 +53,19 @@
     display: none;
   }
 
+  .destroy-band{
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    display: none;
+  }
+
+  &:hover {
+    .destroy-band{
+      display: block;
+    }
+  }
+
   &.editing{
     .footer{
       display: block;

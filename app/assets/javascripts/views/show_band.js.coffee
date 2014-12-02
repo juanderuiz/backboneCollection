@@ -8,6 +8,7 @@ class App.Views.ShowBand extends Backbone.View
     'keydown .band-name': 'blurIfEnter'
     'focus .band-name': 'beginEditing'
     'blur .band-name': 'endEditing'
+    'click .destroy-band': 'destroyBand'
 
   render: ->
     @$el.html(@template(band: @model))
@@ -28,3 +29,9 @@ class App.Views.ShowBand extends Backbone.View
 
   endEditing: ->
     @$el.removeClass('editing')
+
+  destroyBand: ->
+    console.log("Destroy??")
+    @model.destroy()
+    @remove()
+    false

@@ -49,8 +49,15 @@
     height: 165px;
   }
 
-  .footer{
+  .editing-footer{
     display: none;
+  }
+
+  .normal-footer{
+    color: gray;
+    //border-top: 1px solid black;
+    padding-top: 10px;
+    font-size: 0.8em;
   }
 
   .destroy-band{
@@ -67,10 +74,14 @@
   }
 
   &.editing{
-    .footer{
+    border-color: blue;
+    .editing-footer{
       display: block;
     }
-    border-color: blue;
+    .normal-footer{
+      display: none;
+    }
+    
   }
 
   &.error{

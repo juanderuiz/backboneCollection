@@ -28,11 +28,15 @@ class BandsController < ApplicationController
 
   def update
     band = Band.find(params[:id])
-    if band.update_attributes(band_params)
-      render json: band, status: 204
-    else
-      render json: band.errors, status: 422 
+    band.update_attributes(band_params)
+    respond_with(band) do |format|
+      format.json { render json: band}
     end
+    #if band.update_attributes(band_params)
+     # render json: band, status: 204, location: band
+   # else
+      #render json: band.errors, status: 422 
+    #end
   end
 
   def destroy

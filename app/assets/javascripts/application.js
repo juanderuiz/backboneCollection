@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require lodash
 //= require backbone
+//= require moment
 //= require mymusic
 //= require_tree ../templates
 //= require_tree ./models

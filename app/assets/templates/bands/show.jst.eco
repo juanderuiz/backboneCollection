@@ -1,7 +1,11 @@
 <header class="name-container">
   <input type="text" class="band-name" value="<%= @band.get("name") %>" placeholder="Name..." />
 </header>
-<div class="footer">
+
+<div class="normal-footer">
+</div>
+
+<div class="editing-footer">
   <button class="save">Save</button>
 </div>
 <button class="destroy-band" tabindex="-1">Remove</button>

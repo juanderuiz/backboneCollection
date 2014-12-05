@@ -4,7 +4,9 @@ class App.Views.ShowBand extends Backbone.View
   className: 'band'
 
   initialize: ->
-    @listenTo(@model, "invalid", @addError)
+    @listenTo(@model, "invalid", @addError)#Lnzado por Backbone
+    @listenTo(@model, "error", @addError) #Lanzado por servidor
+    @lastUpdated = new App.Views.LastUpdated(model: @model)
 
   events:
     'change': 'save'
@@ -15,7 +17,12 @@ class App.Views.ShowBand extends Backbone.View
 
   render: ->
     @$el.html(@template(band: @model))
+    @lastUpdated.setElement(@$('.normal-footer')).render()
     this
+
+  remove: ->
+    @lastUpdated.remove(arguments...)
+    super(arguments...)
 
   save: ->
     @model.set
